@@ -1,0 +1,44 @@
+Source: miniasync
+Section: libs
+Priority: optional
+Maintainer: Adam Borowski <kilobyte@angband.pl>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ pkg-config,
+ valgrind-if-available,
+ pandoc,
+Standards-Version: 4.6.1
+Homepage: https://github.com/pmem/miniasync
+Vcs-Browser: https://github.com/kilobyte/miniasync
+Vcs-Git: https://github.com/kilobyte/miniasync
+Description: library for asynchronous programming in C
+ miniasync is a minimalistic library used for asynchronous programming in C,
+ based on futures that are an abstraction representing a task or a collection
+ of tasks.
+ .
+ The library provides a "virtual data mover", an abstraction for asynchronous
+ memory operations that avoids hard dependencies on any specific hardware
+ offload.
+
+Package: libminiasync-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libminiasync0 (= ${binary:Version}),
+ ${misc:Depends},
+Description: ${source:Synopsis}
+ ${source:Extended-Description}
+ .
+ This package contains the development headers.
+
+Package: libminiasync0
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: ${source:Synopsis}
+ ${source:Extended-Description}
