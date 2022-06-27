@@ -37,7 +37,7 @@
 
 #if ANY_VG_TOOL_ENABLED
 extern unsigned _On_valgrind;
-#define On_valgrind __builtin_expect(_On_valgrind, 0)
+#define On_valgrind __builtin_expect((long)_On_valgrind, 0)
 #include "valgrind/valgrind.h"
 #else
 #define On_valgrind (0)
@@ -45,7 +45,7 @@ extern unsigned _On_valgrind;
 
 #if VG_HELGRIND_ENABLED
 extern unsigned _On_helgrind;
-#define On_helgrind __builtin_expect(_On_helgrind, 0)
+#define On_helgrind __builtin_expect((long)_On_helgrind, 0)
 #include "valgrind/helgrind.h"
 #else
 #define On_helgrind (0)
@@ -53,7 +53,7 @@ extern unsigned _On_helgrind;
 
 #if VG_DRD_ENABLED
 extern unsigned _On_drd;
-#define On_drd __builtin_expect(_On_drd, 0)
+#define On_drd __builtin_expect((long)_On_drd, 0)
 #include "valgrind/drd.h"
 #else
 #define On_drd (0)
@@ -62,7 +62,7 @@ extern unsigned _On_drd;
 #if VG_HELGRIND_ENABLED || VG_DRD_ENABLED
 
 extern unsigned _On_drd_or_hg;
-#define On_drd_or_hg __builtin_expect(_On_drd_or_hg, 0)
+#define On_drd_or_hg __builtin_expect((long)_On_drd_or_hg, 0)
 
 #define VALGRIND_ANNOTATE_HAPPENS_BEFORE(obj) do {\
 	if (On_drd_or_hg) \
@@ -136,7 +136,7 @@ extern unsigned _On_drd_or_hg;
 #if VG_PMEMCHECK_ENABLED
 
 extern unsigned _On_pmemcheck;
-#define On_pmemcheck __builtin_expect(_On_pmemcheck, 0)
+#define On_pmemcheck __builtin_expect((long)_On_pmemcheck, 0)
 
 #include "valgrind/pmemcheck.h"
 
@@ -341,7 +341,7 @@ extern int _Pmreorder_emit;
 #if VG_MEMCHECK_ENABLED
 
 extern unsigned _On_memcheck;
-#define On_memcheck __builtin_expect(_On_memcheck, 0)
+#define On_memcheck __builtin_expect((long)_On_memcheck, 0)
 
 #include "valgrind/memcheck.h"
 
