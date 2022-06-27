@@ -429,7 +429,7 @@ typedef
        * without the fix, this macro doesn't return          \
        * the default value correctly                         \
        */                                                    \
-      DO_CREQ_W_WWW(_res, (-2LL)/*default*/,                 \
+      DO_CREQ_W_WWW(_res, (-2L)/*default*/,                  \
                     _VG_USERREQ__HG_GET_ABITS,               \
                     void*,(zza), void*,(zzabits),            \
                     unsigned long,(zznbytes));               \
