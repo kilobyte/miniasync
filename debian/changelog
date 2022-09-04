@@ -1,3 +1,10 @@
+miniasync (0.2.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Use -pthread not -lpthread.
+
+ -- Adam Borowski <kilobyte@angband.pl>  Mon, 05 Sep 2022 00:03:51 +0200
+
 miniasync (0.1.0-1) experimental; urgency=medium
 
   * Initial release. (Closes: #1011230)
