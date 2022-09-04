@@ -1,13 +1,40 @@
+Mon Aug 29 2022 Łukasz Plewa <lukasz.plewa@intel.com>
+
+	* Version 0.2.1
+
+	This release bumps the library version to the correct value.
+
+Thu Aug 25 2022 Łukasz Plewa <lukasz.plewa@intel.com>
+
+	* Version 0.2.0
+
+	This release:
+	- Adjust DML data mover to changes in
+	DSA standard to ensure data persistency.
+	- Adds flush operation to VDM and DML data mover.
+
+	Other changes and notable bug fixes:
+	- common: use correct atomics in ringbuf
+	- common: fix use-after-free in membuf in mt scenarios
+	- common: replace improper 'RPMA' in man pages with 'MINIASYNC'
+	- doc: add async property to documentation
+	- doc: update async property documentation
+	- doc: update code styling to properly appear in manpage
+	- masync: drop unused #ifdefs that block portability
+	- masync: add hashmap example
+	- masync: add flag indicating that future is async
+	- masync: add macro to check if chain entry was initialized
+
 Fri May 20 2022 Weronika Lewandowska <weronika.lewandowska@intel.com>
 
 	* Version 0.1.0
 
 	This is the first official release of the miniasync library.
- 
+
 	The library provides the API for asynchronous memory operations
 	through the use of features and runtime mechanisms and independence
 	in terms of hardware by implementing a virtual data mover.
-	
+
 	This release also contains:
 	- documentation on the implemented functionality
 	- basic examples
